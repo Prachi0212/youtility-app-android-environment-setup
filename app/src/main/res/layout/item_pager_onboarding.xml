@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.youtility.customview.CustomTextView
+        android:id="@+id/tvTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/ivCentreImg"
+        android:layout_alignEnd="@+id/ivCentreImg"
+        android:layout_marginTop="@dimen/activity_vertical_margin_extra"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center"
+        android:text="@string/onbaording_text_top_1"
+        android:textColor="@color/textColorDark"
+        android:textSize="@dimen/font_large" />
+
+    <ImageView
+        android:id="@+id/ivCentreImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTop"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/large_view_margin"
+        android:layout_marginBottom="@dimen/medium_view_margin"
+        android:src="@drawable/carousel_finances" />
+
+    <com.youtility.customview.CustomTextView
+        android:id="@+id/tvBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivCentreImg"
+        android:layout_alignStart="@+id/ivCentreImg"
+        android:layout_alignEnd="@+id/ivCentreImg"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="center"
+        android:text="@string/onboarding_text_bottom_1"
+        android:textColor="@color/onboardingBottomText"
+        android:textSize="@dimen/font_small" />
+</RelativeLayout>

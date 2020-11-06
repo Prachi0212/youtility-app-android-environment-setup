@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingLeft="@dimen/_50dp"
+    android:paddingTop="@dimen/_35dp"
+    android:background="@drawable/rounded_top_corners_bg"
+    android:paddingRight="@dimen/_50dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+   >
+
+    <com.youtility.customview.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="10sp"
+        android:text="@string/confirm_your_fingerprint"
+        android:textColor="@color/colorDarkBlue"
+        android:textSize="18sp"
+        android:textStyle="normal" />
+
+    <com.youtility.customview.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_regular"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_8dp"
+        android:textColor="@color/colorLightBlue"
+        android:textSize="@dimen/_16sp"
+        android:text="@string/use_finger_print_faster" />
+
+    <ImageView
+        android:id="@+id/ivFingerPrint"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="25dp"
+        android:scaleType="center"
+        android:layout_gravity="center"
+        android:background="@drawable/circle_bg"
+        android:tint="@color/white"
+        android:src="@drawable/ic_fingerprint_40dp"
+        android:layout_height="wrap_content" />
+    <com.youtility.customview.CustomTextView
+        android:id="@+id/tvCancel"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="@dimen/_48dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_16sp"
+        android:fontFamily="@font/roboto_medium"
+        android:layout_gravity="center"
+        android:textColor="@color/colorAccent"
+        android:text="@string/cancel"
+        />
+</LinearLayout>

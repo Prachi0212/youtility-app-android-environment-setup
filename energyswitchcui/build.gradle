@@ -1,0 +1,109 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        // need separate runner for facebook screenshot test in module
+        testInstrumentationRunner 'com.youtility.energyswitchcui.SnapshotTestRunner'
+    }
+
+    flavorDimensions "environment"
+    productFlavors {
+        dev {
+            dimension "environment"
+            buildConfigField 'String', 'SERVER_BASE_URL', '"https://dev-k8s.youtility.co.uk"'
+        }
+
+        qa {
+            dimension "environment"
+            buildConfigField 'String', 'SERVER_BASE_URL', '"https://qa-k8s.youtility.co.uk"'
+        }
+
+        staging {
+            dimension "environment"
+            buildConfigField 'String', 'SERVER_BASE_URL', '"https://staging-k8s.youtility.co.uk"'
+        }
+
+        prod {
+            dimension "environment"
+            buildConfigField 'String', 'SERVER_BASE_URL', '"https://prod-k8s.youtility.co.uk"'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+        androidTest.java.srcDirs += 'src/androidTest/kotlin'
+    }
+}
+
+// need for facebook snapshot testing
+configurations.all {
+    // OkHttp 3.5.0+ includes the websockets API, so we need this to prevent a conflict
+    exclude module: 'okhttp-ws'
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //Unit testing
+    testImplementation rootProject.ext.junit
+    androidTestImplementation rootProject.ext.androidTestRunner
+    androidTestImplementation rootProject.ext.espresso
+    testImplementation rootProject.ext.mockito
+    testImplementation rootProject.ext.facebookScreenshotTestCommon
+    implementation rootProject.ext.facebookScreenshotTestLitho
+    androidTestImplementation rootProject.ext.supportTestRules
+
+    //Support Library & UI
+    implementation rootProject.ext.constraintLayout
+    implementation rootProject.ext.supportCompatV7
+    implementation rootProject.ext.supportDesign
+    implementation rootProject.ext.supportCardView
+    implementation rootProject.ext.supportCustomTabs
+    implementation rootProject.ext.glide
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+
+    // RxJava lib
+    implementation rootProject.ext.rxAndroid
+    implementation rootProject.ext.rxJava
+    implementation rootProject.ext.rxJavaRetrofitAdapter
+
+    //Retrofit
+    implementation(rootProject.ext.retrofit) {
+        exclude module: 'okhttp'
+    }
+    implementation rootProject.ext.okHttp
+    implementation rootProject.ext.okHttpLoggingInterceptor
+    implementation rootProject.ext.retrofitGsonConverter
+    implementation rootProject.ext.retrofitScalarsConverter
+
+    //Others
+    implementation rootProject.ext.parceler
+    kapt rootProject.ext.parcelerAnnotationProcessor
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+}
+repositories {
+    mavenCentral()
+}
+
+// need for facebook screenshot test in module
+apply plugin: 'com.facebook.testing.screenshot'
+screenshots {
+    multipleDevices true
+}

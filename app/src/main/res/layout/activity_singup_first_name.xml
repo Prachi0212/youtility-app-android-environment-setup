@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <com.youtility.customview.CustomTextView
+        android:id="@+id/tvHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/_45dp"
+        android:layout_marginEnd="@dimen/_45dp"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center"
+        android:text="@string/first_name_head"
+        android:textColor="@color/gray_blue_shade"
+        android:textSize="@dimen/font_heading" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/activity_horizontal_margin_extra"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin_extra"
+        android:orientation="vertical">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/etFirstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:hint="@string/first_name"
+                android:inputType="textCapWords"
+                android:maxLines="1"
+                android:textColor="@color/gray_blue_shade"
+                android:textSize="@dimen/_16sp" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <com.youtility.customview.CustomButton
+            android:id="@+id/btnContinue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin_extra"
+            android:layout_marginTop="@dimen/_80dp"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin_extra"
+            android:layout_marginBottom="@dimen/basic_view_margin"
+            android:background="@drawable/button_bg"
+            android:enabled="false"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/text_continue"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</RelativeLayout>

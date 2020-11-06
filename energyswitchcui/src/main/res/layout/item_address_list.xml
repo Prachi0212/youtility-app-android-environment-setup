@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/rlContainer"
+    android:layout_margin="@dimen/_7sdp"
+    android:layout_height="wrap_content">
+
+
+    <com.youtility.energyswitchcui.customview.CustomTextView
+        android:id="@+id/tvAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="center"
+        android:lineSpacingExtra="@dimen/_3sdp"
+        android:text="@string/text_continue"
+        android:textColor="@color/gray_blue_shade"
+        android:textSize="@dimen/font_large" />
+
+
+    <ImageView
+        android:id="@+id/imgCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:background="@drawable/check_tc"
+        android:checked="false" />
+
+
+    <!--  <CheckBox
+          android:id="@+id/checkbox"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentRight="true"
+          android:layout_centerInParent="true"
+          android:layout_marginRight="@dimen/_10sdp"
+          android:button="@drawable/check_tc"
+          android:checked="false" />-->
+
+    <View
+        android:id="@+id/textline"
+        android:layout_width="match_parent"
+        android:layout_height="0.7dp"
+        android:layout_below="@+id/tvAddress"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:background="@color/lightBorder" />
+
+</RelativeLayout>

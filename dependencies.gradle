@@ -1,0 +1,43 @@
+ext {
+    //Android
+    minSdkVersion = 24
+    targetSdkVersion = 28
+    testInstrumentationRunner = "com.youtility.runner.SnapshotTestRunner"
+    androidSupportLibVersion = "28.0.0"
+    okHttpLibVersion = "3.14.0"
+
+    //Unit testing
+    junit = "junit:junit:4.12"
+    androidTestRunner = "com.android.support.test:runner:1.0.2"
+    espresso = "com.android.support.test.espresso:espresso-core:3.0.2"
+    mockito = "org.mockito:mockito-all:1.10.19"
+    facebookScreenshotTestCommon = "com.facebook.testing.screenshot:layout-hierarchy-common:0.8.0"
+    facebookScreenshotTestLitho = "com.facebook.testing.screenshot:layout-hierarchy-litho:0.8.0"
+    supportTestRules = "com.android.support.test:rules:1.0.2"
+
+    //Support Library & UI
+    constraintLayout = "com.android.support.constraint:constraint-layout:1.1.3"
+    supportCompatV7 = "com.android.support:appcompat-v7:$androidSupportLibVersion"
+    supportDesign = "com.android.support:design:$androidSupportLibVersion"
+    supportCardView = "com.android.support:cardview-v7:$androidSupportLibVersion"
+    supportCustomTabs = "com.android.support:customtabs:$androidSupportLibVersion"
+    glide = "com.github.bumptech.glide:glide:3.7.0"
+
+    // RxJava lib
+    rxAndroid = "io.reactivex.rxjava2:rxandroid:2.0.1"
+    rxJava = "io.reactivex.rxjava2:rxjava:2.1.8"
+    rxJavaRetrofitAdapter = "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0"
+
+    //Retrofit
+    retrofit = "com.squareup.retrofit2:retrofit:2.4.0"
+    okHttp = "com.squareup.okhttp3:okhttp:$okHttpLibVersion"
+    okHttpLoggingInterceptor = "com.squareup.okhttp3:logging-interceptor:$okHttpLibVersion"
+    retrofitGsonConverter = "com.squareup.retrofit2:converter-gson:2.3.0"
+    retrofitScalarsConverter = "com.squareup.retrofit2:converter-scalars:2.3.0"
+
+    //Others
+    parceler = "org.parceler:parceler-api:1.1.6"
+    parcelerAnnotationProcessor = "org.parceler:parceler:1.1.6"
+    lombok = "org.projectlombok:lombok:1.16.16"
+    lombokAnnotationProcessor = "org.projectlombok:lombok:1.16.16"
+}

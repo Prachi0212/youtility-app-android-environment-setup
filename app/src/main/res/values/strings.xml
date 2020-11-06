@@ -1,0 +1,64 @@
+<resources>
+    <string name="app_name">Youtility</string>
+    <string name="loading_movies">Loading Movies</string>
+    <string name="loading_details">Loading details...</string>
+    <string name="regular_font">roboto_regular.ttf</string>
+    <string name="medium_font">roboto_medium.ttf</string>
+    <string name="bold_font">roboto_bold.ttf</string>
+
+    <!--Onboarding screen-->
+    <string name="login">Login</string>
+    <string name="sign_up">Sign up</string>
+    <string name="onbaording_text_top_1">Take control of your home\nfinances</string>
+    <string name="onboarding_text_bottom_1">Securely connect your bank accounts and track and manage your spending</string>
+    <string name="onbaording_text_top_2">Switch providers within\nthe app</string>
+    <string name="onboarding_text_bottom_2">Compare your deal with all available offers and switch in app</string>
+    <string name="onbaording_text_top_3">Securely connect your\nbank accounts</string>
+    <string name="onboarding_text_bottom_3">We are authorised and regulated by the\nFinancial Conduct Authority</string>
+    <string name="onbaording_text_top_4">We are working in partnership\nwith Citizens Advice</string>
+    <string name="onboarding_text_bottom_4">To ensure we deliver a free and impartial money manager tool for everyone</string>
+
+    <string-array name="on_boarding_top_texts">
+        <item>@string/onbaording_text_top_1</item>
+        <item>@string/onbaording_text_top_2</item>
+        <item>@string/onbaording_text_top_3</item>
+        <item>@string/onbaording_text_top_4</item>
+    </string-array>
+
+    <string-array name="on_boarding_bottom_texts">
+        <item>@string/onboarding_text_bottom_1</item>
+        <item>@string/onboarding_text_bottom_2</item>
+        <item>@string/onboarding_text_bottom_3</item>
+        <item>@string/onboarding_text_bottom_4</item>
+    </string-array>
+
+    <string name="terms_and_privacy_head_text"><![CDATA[Before we continue, please review our Terms & Privacy Policy]]></string>
+    <string name="terms_of_service">Terms of Service</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="how_do_we_make_money">How do we make money?</string>
+    <string name="if_you_change">If you change a supplier using Youtility, we receive a flat, fixed fee from the new supplier. You have to benefit for us to benefit, simple as that.</string>
+    <string name="text_continue">Continue</string>
+    <string name="I_accept_tc">I accept the Terms of Service</string>
+    <string name="first_name_head">Great, let’s get started. What’s your first name?</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name_head">Please enter your last name or family name</string>
+    <string name="last_name">Last Name</string>
+    <string name="last_name_small">last name</string>
+    <string name="home_finances">"home\nfinances"</string>
+    <string name="switch_providers">Switch providers</string>
+    <string name="bank_accounts">bank accounts</string>
+    <string name="financial_conduct_authority">Financial Conduct Authority</string>
+    <string name="citizens_advice">Citizens Advice</string>
+    <string name="first_name_question_mark">first name?</string>
+    <string name="finger_print_prompt_head">Would you like to sign in with your Fingerprint?</string>
+    <string name="your_finger_print">your Fingerprint?</string>
+    <string name="no_thanks">No thanks</string>
+    <string name="use_finger_print">Use Fingerprint</string>
+    <string name="confirm_your_fingerprint">Confirm your fingerprint</string>
+    <string name="use_finger_print_faster">Use your fingerprint for faster, easier access to your account</string>
+    <string name="cancel">Cancel</string>
+    <string name="finger_recognized">Fingerprint recognized</string>
+    <string name="finger_print_not_recognized">Fingerprint wasn’t recognized</string>
+    <string name="no_fingerprint">Your device does not have a fingerprint sensor</string>
+    <string name="register_atleas_one_fingerprint">Please register at least one finger print from Settings screen.</string>
+</resources>

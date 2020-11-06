@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.youtility">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+
+    <application
+        android:name=".YoutilityApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="false"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".scene.splash.SplashActivity"
+            android:theme="@style/FullScreenTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.youtility.common.base.BaseActivity" />
+
+        <activity
+            android:name=".scene.onboarding.OnboardingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullScreenTheme" />
+
+        <activity
+            android:name=".scene.signup.termsandprivacy.TermsAndPrivacyActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullScreenTheme" />
+
+        <activity
+            android:name=".scene.signup.firstname.SignUpFirstNameActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"
+            android:theme="@style/FullScreenTheme" />
+
+        <activity
+            android:name=".scene.signup.lastname.SignUpLastNameActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullScreenTheme" />
+
+        <activity
+            android:name=".scene.fingerprintauth.FingerprintPromptActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullScreenTheme" />
+    </application>
+</manifest>

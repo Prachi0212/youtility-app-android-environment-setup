@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">energyswitchcui</string>
+
+    <!-- Common string -->
+    <string name="network_not_available">Network not available</string>
+    <string name="what_is_postcode">Let’s get started. What’s your postcode?</string>
+    <string name="need_to_know_home_address">To get an energy quote we need to know your home address</string>
+    <string name="postcode">Postcode</string>
+    <string name="txt_continue">Continue</string>
+    <string name="not_valid_uk_code">This doesn\'t appear to be a valid UK postcode</string>
+    <string name="postcode_question_mark">postcode?</string>
+
+    <!--Address and Address No Result-->
+    <string name="select_address">Please select your\naddress</string>
+    <string name="text_continue">Continue</string>
+    <string name="text_no_address_result">We couldn\'t find any addresses for the selected postcode</string>
+    <string name="address_1">19, Rathbone Street</string>
+    <string name="address_2">19, Rathbone Street, Flat A</string>
+    <string name="address_3">19, Rathbone Street, Flat B</string>
+    <string name="address_4">19, Rathbone Street, Flat C</string>
+    <string name="address_5">19, Rathbone Street, Flat D</string>
+    <string-array name="address_list">
+        <item>@string/address_1</item>
+        <item>@string/address_2</item>
+        <item>@string/address_3</item>
+        <item>@string/address_4</item>
+        <item>@string/address_5</item>
+
+
+    </string-array>
+</resources>

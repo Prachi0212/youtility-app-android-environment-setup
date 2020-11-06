@@ -1,0 +1,146 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.facebook.testing.screenshot'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.youtility"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner rootProject.ext.testInstrumentationRunner
+    }
+    flavorDimensions "environment"
+    productFlavors {
+        dev {
+            dimension "environment"
+            buildConfigField 'String', 'SERVER_BASE_URL', '"https://dev-k8s.youtility.co.uk"'
+            versionNameSuffix "-dev"
+            applicationIdSuffix ".dev"
+        }
+
+        qa {
+            dimension "environment"
+            buildConfigField 'String', 'SERVER_BASE_URL', '"https://qa-k8s.youtility.co.uk"'
+            versionNameSuffix "-test"
+            applicationIdSuffix ".test"
+        }
+
+        staging {
+            dimension "environment"
+            buildConfigField 'String', 'SERVER_BASE_URL', '"https://staging-k8s.youtility.co.uk"'
+            versionNameSuffix "-staging"
+            applicationIdSuffix ".staging"
+        }
+
+        prod {
+            dimension "environment"
+            buildConfigField 'String', 'SERVER_BASE_URL', '"https://prod-k8s.youtility.co.uk"'
+        }
+    }
+
+    signingConfigs {
+        Properties properties = new Properties()
+        properties.load(project.rootProject.file('local.properties').newDataInputStream())
+        release {
+            storeFile file("keystore/youtility_keystore.jks")
+            storePassword properties.getProperty('storePassword')
+            keyAlias properties.getProperty('keyAlias')
+            keyPassword properties.getProperty('keyPassword')
+        }
+    }
+
+    buildTypes {
+        debug {
+            shrinkResources false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            shrinkResources false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+
+    bundle {
+        language {
+            enableSplit = false
+        }
+    }
+    configurations.all {
+        resolutionStrategy {
+            // force certain versions of dependencies (including transitive)
+            force 'com.squareup.okhttp3:okhttp:' + okHttpLibVersion
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //Unit testing
+    testImplementation rootProject.ext.junit
+    androidTestImplementation rootProject.ext.androidTestRunner
+    androidTestImplementation rootProject.ext.espresso
+    testImplementation rootProject.ext.mockito
+    testImplementation rootProject.ext.facebookScreenshotTestCommon
+    implementation rootProject.ext.facebookScreenshotTestLitho
+    androidTestImplementation rootProject.ext.supportTestRules
+
+    //Support Library & UI
+    implementation rootProject.ext.constraintLayout
+    implementation rootProject.ext.supportCompatV7
+    implementation rootProject.ext.supportDesign
+    implementation rootProject.ext.supportCardView
+    implementation rootProject.ext.supportCustomTabs
+    implementation rootProject.ext.glide
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+    // Dagger dependency for DI
+    implementation 'com.google.dagger:dagger:2.16'
+    annotationProcessor "com.google.dagger:dagger-compiler:2.16"
+    compileOnly 'javax.annotation:jsr250-api:1.0'
+    implementation 'javax.inject:javax.inject:1'
+
+    // RxJava lib
+    implementation rootProject.ext.rxAndroid
+    implementation rootProject.ext.rxJava
+    implementation rootProject.ext.rxJavaRetrofitAdapter
+
+    //Retrofit
+    implementation(rootProject.ext.retrofit) {
+        exclude module: 'okhttp'
+    }
+    implementation rootProject.ext.okHttp
+    implementation rootProject.ext.okHttpLoggingInterceptor
+    implementation rootProject.ext.retrofitGsonConverter
+    implementation rootProject.ext.retrofitScalarsConverter
+
+    //Memory leaks
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.3'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.3'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-support-fragment:1.6.3'
+
+    //Others
+    implementation rootProject.ext.parceler
+    annotationProcessor rootProject.ext.parcelerAnnotationProcessor
+    implementation rootProject.ext.lombok
+    annotationProcessor rootProject.ext.lombokAnnotationProcessor
+
+    // Fingerprint Auth
+    implementation 'com.multidots:fingerprint-auth:1.0.1'
+
+    //Module Projects
+    implementation project(':energyswitchcui')
+}
+
+screenshots {
+    multipleDevices true
+}

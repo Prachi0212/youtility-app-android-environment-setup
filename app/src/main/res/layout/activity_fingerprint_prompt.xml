@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="com.youtility.scene.fingerprintauth.FingerprintPromptActivity">
+
+    <include layout="@layout/toolbar" />
+
+    <com.youtility.customview.CustomTextView
+        android:id="@+id/tvHead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/_45dp"
+        android:layout_marginRight="@dimen/_45dp"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center"
+        android:text="@string/finger_print_prompt_head"
+        android:textColor="@color/gray_blue_shade"
+        android:textSize="@dimen/_20sp" />
+
+    <com.youtility.customview.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvHead"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/_32dp"
+        android:layout_marginTop="@dimen/_17dp"
+        android:layout_marginEnd="@dimen/_32dp"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="6sp"
+        android:textColor="@color/gray_blue_shade"
+        android:textSize="@dimen/_14sp"
+        android:textStyle="normal"
+        android:text="This is more secure and faster. We never have access to your fingerprint details." />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_fingerprint" />
+
+    <com.youtility.customview.CustomButton
+        android:id="@+id/btnUseFingerprint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tvNoThanks"
+        android:layout_marginStart="@dimen/_50dp"
+        android:layout_marginTop="@dimen/_80dp"
+        android:layout_marginEnd="@dimen/_50dp"
+        android:background="@drawable/button_bg"
+        android:fontFamily="@font/roboto_regular"
+        android:paddingTop="@dimen/medium_margin"
+        android:paddingBottom="@dimen/medium_margin"
+        android:text="@string/use_finger_print"
+        android:textAllCaps="false"
+        android:textColor="@color/white" />
+
+    <com.youtility.customview.CustomTextView
+        android:id="@+id/tvNoThanks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_24dp"
+        android:layout_marginBottom="@dimen/_24dp"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center_horizontal"
+        android:text="@string/no_thanks"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/_14sp"
+        android:textStyle="normal" />
+</RelativeLayout>

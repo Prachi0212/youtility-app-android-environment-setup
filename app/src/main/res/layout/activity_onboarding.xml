@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="@dimen/activity_horizontal_margin_extra"
+    android:layout_marginRight="@dimen/activity_horizontal_margin_extra"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/medium_view_margin"
+        android:layout_weight="1"
+        android:background="@drawable/onboarding_backdrop" />
+
+    <com.youtility.customview.CirclePageIndicator
+        android:id="@+id/pagerIndicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_20dp"
+        app:fillColor="@color/colorAccent"
+        app:pageColor="@color/colorCircleNormal"
+        app:radius="@dimen/circle_indicator_radius" />
+
+    <com.youtility.customview.CustomButton
+        android:id="@+id/btnSingUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/small_view_margin"
+        android:background="@drawable/rounded_blue_bg"
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/sign_up"
+        android:textColor="@color/white" />
+
+    <com.youtility.customview.CustomTextView
+        android:id="@+id/tvLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/roboto_regular"
+        android:paddingStart="@dimen/large_view_margin"
+        android:paddingTop="@dimen/medium_view_margin"
+        android:paddingEnd="@dimen/large_view_margin"
+        android:paddingBottom="@dimen/medium_view_margin"
+        android:text="@string/login"
+        android:textColor="@color/colorVeryLightBlue"
+        android:textSize="@dimen/medium_text_size" />
+</LinearLayout>
